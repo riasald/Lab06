@@ -1,5 +1,11 @@
 #Ria Saldajeno
 
+def decode(password):
+    decoded = [int(num) - 3 for num in password]
+    decoded_password = ''.join(map(str, decoded))
+    return decoded_password
+
+
 if __name__ == "__main__":
     while True:
         # prints menu and prompts user input
@@ -28,11 +34,12 @@ if __name__ == "__main__":
                 # store the whole list as a string in encoded_pass variable
                 encoded_pass = ''.join(encoded_pass_list)
 
-            print("Your pass word has been encoded and stored!\n")
+            print("Your password has been encoded and stored!\n")
 
         #decoder
         if useroption == 2:
-            pass
+
+            print(f'The encoded password is {encoded_pass}, and the original password is {decode(encoded_pass)}.\n')
 
         #quit
         if useroption == 3:
